@@ -1,5 +1,6 @@
 package com.abhi.elasticsearch.load;
 
+import com.abhi.elasticsearch.jparepository.UserJpaRepository;
 import com.abhi.elasticsearch.model.Users;
 import com.abhi.elasticsearch.repository.UsersRepository;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,9 @@ public class Loaders {
 
     @Autowired
     UsersRepository usersRepository;
+    
+    @Autowired
+    UserJpaRepository userJpaRepository;
 
     @PostConstruct
     @Transactional
@@ -27,7 +32,9 @@ public class Loaders {
 
         operations.putMapping(Users.class);
         System.out.println("Loading Data");
-        usersRepository.save(getData());
+        userJpaRepository.save(getData());
+        List<Users> userList=userJpaRepository.findAll();		
+        usersRepository.save(userList);
         System.out.printf("Loading Completed");
 
     }
