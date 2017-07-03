@@ -13,3 +13,4 @@ Using the following endpoints, different operations can be achieved:
 - Spring REST Controller
 - Spring Data Elastic Search
 
+## Added functionality to read data from h2 database and loading into Elastic search repository ....
