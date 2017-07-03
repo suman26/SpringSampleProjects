@@ -2,7 +2,7 @@
 Sample Projects related to Spring Basics
 
 
-Spring-solr Project:
+Spring-Solr Project:
 
 Steps to build and run the application :
 
@@ -14,3 +14,8 @@ Steps to build and run the application :
 6. Check on the Solr UI and check core exists or not .
 7. Now you are ready to go just import the project and run SpringSolrApplication as java application 
 8. You can cross check by going to Core product and run the query.:)
+
+Spring Elastic Serach Project:
+
+1. It is built to just show the basic example of elastic search using flat file to store indexes and search criteria .
+2. I will update it later so that it will work for cluster mode .
